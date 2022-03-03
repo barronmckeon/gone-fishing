@@ -6,7 +6,7 @@ let fishKind = ['Betta', 'Goldfish', 'Catfish', 'Swordfish', 'Tigershark', 'Ocea
 //let emptyBucket = [ ]
 let currentBucket = [ ]
 let currentBucketWeight = []
-let hour = 0
+let hour = 6
 //let currentWeight = 0
 
 
@@ -19,37 +19,35 @@ function randomValue(){
     return fishValue;
 }
 
-
 function randomFish () {
     let Adj1 = fishAdj1[Math.floor(Math.random()*10)]
     let Adj2 = fishAdj2[Math.floor(Math.random()*10)]
     let newKind = fishKind[Math.floor(Math.random()*10)]
-    let newFish = {
-     fishName :  + Adj1 +  ' ' 
-     + Adj2  +  ' '
-     + newKind +  ' '
-     }
+    let newFish = Adj1 +  ' ' + Adj2  +  ' ' + newKind +  ' ';
      return newFish
-    
     }
+
+
 // if variable created inside a function, it needs to be called and then stored in another 
 //variable outside the function.  ie random value creates fish value, call random value and then pass
 //into a new variable
  
-while (hour < 7 && currentBucketWeight <= 10  ){
-randomFish();
-randomValue();
-randomWeight();
+while (hour < 13 && currentBucketWeight <= 10  ){
 let fishValue=randomValue();
 let fishWeight = randomWeight();
+let currentBucket = [ ]
+let newFish = randomFish();
+
 //console.log(currentBucket)
 
-let to_Fish= prompt("Nice! You caught a " +  " This fish is worth " + fishValue + " and weighs " + fishWeight+ 'Choose: [k]eep or [r]elease this fish')
-console.log('Current time is ' + hour + ":00")
+let to_Fish= prompt("Nice! You caught a " +  newFish +  " This fish is worth " + fishValue + "$ " + " and weighs " + fishWeight+ ' .lbs ' + 'Choose: [k]eep or [r]elease this fish')
+console.log('Current time is ' + hour + ":00am")
+console.log ('Current haul!' + currentBucket);
 
     //let emptybucket = caught fishes
 
   if (to_Fish === 'k'){
+console.log ("That's a keeper!!")
 currentBucket.push(randomFish);
 hour++;
  
