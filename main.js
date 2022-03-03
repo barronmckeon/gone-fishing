@@ -27,6 +27,7 @@ function randomFish () {
      return newFish
     }
 
+    
 
 // if variable created inside a function, it needs to be called and then stored in another 
 //variable outside the function.  ie random value creates fish value, call random value and then pass
@@ -35,13 +36,14 @@ function randomFish () {
 while (hour < 13 && currentBucketWeight <= 10  ){
 let fishValue=randomValue();
 let fishWeight = randomWeight();
-let currentBucket = [ ]
-let newFish = randomFish();
+// let currentBucket = [ ];
+let newFish1 = randomFish();// is returning new fish variable from randomFish function, 
+//and newfish1 is being set equal to the value returned from that function. 
 
 //console.log(currentBucket)
 
-let to_Fish= prompt("Nice! You caught a " +  newFish +  " This fish is worth " + fishValue + "$ " + " and weighs " + fishWeight+ ' .lbs ' + 'Choose: [k]eep or [r]elease this fish')
-console.log('Current time is ' + hour + ":00am")
+let to_Fish= prompt("Nice! You caught a " +  newFish1 +  " This fish is worth " + fishValue + "$ " + " and weighs " + fishWeight+ ' .lbs ' + 'Choose: [k]eep or [r]elease this fish')
+console.log('Current time is ' + hour + ":00am");
 console.log ('Current haul!' + currentBucket);
 
     //let emptybucket = caught fishes
